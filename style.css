@@ -1,0 +1,137 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Corpo da página com gradiente */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+}
+
+/* HEADER */
+header {
+  background-color: #f2f2f2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  height: 60px;
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+}
+
+.header-text span {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #003366;
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ccff;
+}
+
+/* MAIN */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.content p {
+  color: #444;
+}
+
+/* ASIDE */
+aside {
+  margin-top: 30px;
+}
+
+aside h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+aside ul {
+  padding-left: 20px;
+}
+
+aside a {
+  color: #006699;
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* WHATSAPP FIXO */
+#whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+
+#whatsapp i {
+  font-size: 3rem;
+  color: #25D366;
+  transition: transform 0.3s;
+}
+
+#whatsapp i:hover {
+  transform: scale(1.1);
+}
