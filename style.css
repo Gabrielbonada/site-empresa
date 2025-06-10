@@ -20,10 +20,8 @@ header {
 
 }
 
-.header-text {
-  span {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+.header-text span {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .conteudo-direita {
@@ -54,30 +52,30 @@ header {
   border: none;
 }
 
-.dropdeow-coitainer {
+.dropdown-container {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  min-width: 160px;
   top: 100%;
-  left: -100%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
 }
 
-.dropdeow-coitainer a {
+
+.dropdown-container a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdeow-coitainer a:hover {
-  background-color: #5353ff
+.dropdown-container a:hover {
+  background-color: #003366
 }
 
-.dropdown:hover .dropdeow-coitainer {
+.dropdown:hover .dropdown-container {
   display: block;
 }
 
@@ -194,19 +192,35 @@ main {
   border-radius: 15px;
   background: linear-gradient(135deg, #0c4494, #eb4c0c);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  img{
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-  }
+}
+.card-geral img {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+.card-geral p {
+  width: 100%;
+  max-width: 200px;
+  font-size: 14px;
+  text-align: justify;
+  position: relative;
+  transform: translateX(13%);
+  padding: 15px;
+  margin: 0px
+}
+.card-geral span{
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 .card-geral:hover {
@@ -214,6 +228,7 @@ main {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
+
 /* ASIDE */
 aside {
   margin-top: 30px;
@@ -263,4 +278,89 @@ footer {
 
 #whatsapp i:hover {
   transform: scale(1.1);
+}
+
+/*Modo dark*/
+
+
+/*header*/
+body.dark div.header-text span {
+
+  color: white;
+}
+
+body.dark header {
+  background-color: #1e1e1e;
+}
+
+
+
+
+
+
+
+
+body.dark .secao-aprendizado h2 {
+  color: white;
+}
+
+body.dark main {
+  background-color: #1e1e1e;
+}
+
+body.dark .text-content p,
+body.dark .text-content h2,
+body.dark .text-content b {
+  color: white;
+}
+
+body.dark button.dropbtn {
+  background-color: #eb4c0c;
+}
+
+body.dark nav {
+  background-color: #eb4c0c;
+}
+
+body.dark footer {
+  background-color: #1e1e1e;
+  color: #aaa;
+}
+
+
+body.dark .card-geral {
+  background: linear-gradient(135deg, #1c1c1c, #444);
+  color: white;
+}
+
+body.dark .dropbtn {
+  background-color: #444;
+}
+
+body.dark .dropdeow-coitainer {
+  background-color: #333;
+}
+
+body.dark .dropdeow-coitainer a {
+  color: #f0f0f0;
+}
+
+body.dark .dropdeow-coitainer a:hover {
+  background-color: black;
+}
+
+
+header,
+main,
+footer,
+.text-content p,
+.text-content h2,
+.text-content b,
+a,
+.card-geral,
+nav,
+.dropbtn,
+.dropdeow-coitainer,
+.dropdeow-coitainer a {
+  transition: background-color 0.7s ease, color 0.7s ease;
 }
