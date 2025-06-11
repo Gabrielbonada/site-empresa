@@ -4,54 +4,42 @@
   margin: 0;
   padding: 0;
 }
-
 /* Corpo da página com gradiente */
 body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to bottom right, #545454, #0c4494, #eb4c0c, #5c5454);
   position: relative;
 }
-
 /* HEADER */
 header {
-  background-color: #f2f2f2;
+  background-color: #d3d3d3;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-
 }
-
 .header-text span {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 .conteudo-direita {
   display: flex;
   justify-content: flex-end;
   width: 200px;
-  position: relative;
-  left: 68%;
+  margin-left: auto;
   gap: 30px;
 }
-
 .conteudo-direita button {
   border: none;
 }
-
 .conteudo-direita a {
-  color: black;
-
+ color: black;
 }
-
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
 .dropbtn {
   background-color: #003366;
   border: none;
 }
-
 .dropdown-container {
   display: none;
   position: absolute;
@@ -62,46 +50,36 @@ header {
   transform: translateX(-50%);
   text-align: center;
 }
-
-
 .dropdown-container a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-container a:hover {
   background-color: #003366
 }
-
 .dropdown:hover .dropdown-container {
   display: block;
 }
-
-
 .header-container {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
 .logo {
   height: 60px;
 }
-
 .header-text h1 {
   font-size: 2rem;
   color: #333;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 5px;
 }
-
 .header-text span {
   font-size: 1rem;
   color: #666;
 }
-
 /* NAV */
 nav {
   background-color: #003366;
@@ -110,36 +88,30 @@ nav {
   position: sticky;
   top: 0px;
 }
-
 .juncao-drop {
   gap: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .dropdown button {
   color: white;
 }
-
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
   gap: 30px;
 }
-
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
-
 nav a:hover {
   color: #00ccff;
 }
-
 /* MAIN */
 main {
   max-width: 1300px;
@@ -148,36 +120,26 @@ main {
   z-index: 2;
   background-color: #fff;
 }
-
-.content {
-  img {
+.content img {
     width: 100%;
-  }
 }
-
 .text-content {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
   gap: 20px;
-
-  h2 {
-    margin: 0px;
-  }
-
-  p {
-    margin: 0px;
-    text-align: justify;
-  }
 }
-
-.secao-aprendizado {
-  h2 {
+.text-content h2 {
+  margin: 0px;
+}
+.text-content p {
+  margin: 0px;
+  text-align: justify;
+}
+.secao-aprendizado h2 {
     margin: 0px;
     margin-top: 20px;
-  }
 }
-
 .juncao-cards {
   display: flex;
   gap: 40px;
@@ -185,7 +147,6 @@ main {
   justify-content: center;
   margin-top: 30px;
 }
-
 .card-geral {
   width: 250px;
   height: 350px;
@@ -215,53 +176,50 @@ main {
   padding: 15px;
   margin: 0px
 }
-.card-geral span{
+.card-geral span {
   width: 100%;
   display: block;
   text-align: center;
   margin-top: 10px;
   font-size: 18px;
 }
-
 .card-geral:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
-
-/* ASIDE */
-aside {
-  margin-top: 30px;
+.juncao-galeria {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-
-aside h3 {
-  color: #003366;
-  margin-bottom: 10px;
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-aside ul {
-  padding-left: 20px;
+.galeria img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
-
-aside a {
-  color: #006699;
-  text-decoration: none;
+.title-galeria h3 {
+  margin: 30px 0;
 }
-
-aside a:hover {
-  text-decoration: underline;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: #003366;
   color: #555;
   font-size: 0.9rem;
   margin-top: 40px;
 }
-
+footer p {
+  color: white;
+}
 /* WHATSAPP FIXO */
 #whatsapp {
   position: fixed;
@@ -269,87 +227,71 @@ footer {
   right: 20px;
   z-index: 2000;
 }
-
 #whatsapp i {
   font-size: 3rem;
   color: #25D366;
   transition: transform 0.3s;
 }
-
 #whatsapp i:hover {
   transform: scale(1.1);
 }
 
 /*Modo dark*/
-
-
-/*header*/
+body.dark {
+  background: linear-gradient(to bottom right, #000000, #002147, #002147, #002147, #000000);
+}
 body.dark div.header-text span {
 
-  color: white;
+  color: #F26A21;
 }
-
 body.dark header {
-  background-color: #1e1e1e;
+  background-color: #000000;
 }
-
-
-
-
-
-
-
-
+body.dark div.title-galeria {
+  color: #F26A21;
+}
 body.dark .secao-aprendizado h2 {
-  color: white;
+  color: #F26A21;
 }
-
 body.dark main {
   background-color: #1e1e1e;
 }
-
-body.dark .text-content p,
 body.dark .text-content h2,
 body.dark .text-content b {
+  color: #F26A21;
+}
+body.dark .text-content p {
   color: white;
 }
-
 body.dark button.dropbtn {
-  background-color: #eb4c0c;
+  background-color: black;
 }
-
+body.dark button.dropbtn b {
+  color: #F26A21;
+}
 body.dark nav {
-  background-color: #eb4c0c;
+  background-color: black;
 }
-
 body.dark footer {
   background-color: #1e1e1e;
   color: #aaa;
 }
-
-
 body.dark .card-geral {
   background: linear-gradient(135deg, #1c1c1c, #444);
   color: white;
 }
-
 body.dark .dropbtn {
   background-color: #444;
 }
-
-body.dark .dropdeow-coitainer {
+body.dark .dropdown-container {
   background-color: #333;
 }
-
-body.dark .dropdeow-coitainer a {
+body.dark .dropdown-container a {
   color: #f0f0f0;
 }
-
-body.dark .dropdeow-coitainer a:hover {
+body.dark .dropdown-container a:hover {
   background-color: black;
 }
-
-
 header,
 main,
 footer,
@@ -360,7 +302,18 @@ a,
 .card-geral,
 nav,
 .dropbtn,
-.dropdeow-coitainer,
-.dropdeow-coitainer a {
+.dropdown-container,
+.dropdown-container a {
   transition: background-color 0.7s ease, color 0.7s ease;
+}
+body.dark svg {
+  fill: #F26A21;
+  color: #F26A21;
+  background-color: black;
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+/*media querry*/
+
+@media screen and (min-width: 900px){
+  
 }
