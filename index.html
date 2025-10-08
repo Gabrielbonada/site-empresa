@@ -1,225 +1,968 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>SENAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SENAI - Serviço Nacional de Aprendizagem Industrial. Cursos técnicos e formação profissional com alta empregabilidade.">
+  <meta name="keywords" content="SENAI, educação profissional, cursos técnicos, formação industrial">
+  <title>SENAI — Educação Profissional de Excelência</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <!--container que junta todos elementos da header-->
-    <div class="header-container">
-      <img src="/site-empresa/assets/logo.png" alt="Logo SENAI 2025" class="logo">
-      <!--local do texto do senai-->
-      <div class="header-text">
-        <span> <b>Pagina inicial</b> </span>
-        <!--local do texto do senai-->
-      </div>
-      <!--local que junta todos svgs-->
-      <div class="conteudo-direita">
-        <button style="background-color: #d3d3d3;" id="darkModeToggle">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-moon-fill"
-            viewBox="0 0 16 16">
-            <path
-              d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
-          </svg>
-        </button>
-
-        <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24">
-            <path
-              d="M 12 2 C 11.172 2 10.5 2.672 10.5 3.5 L 10.5 4.1953125 C 7.9131836 4.862095 6 7.2048001 6 10 L 6 16 L 4 18 L 4 19 L 10.269531 19 A 2 2 0 0 0 10 20 A 2 2 0 0 0 12 22 A 2 2 0 0 0 14 20 A 2 2 0 0 0 13.728516 19 L 20 19 L 20 18 L 18 16 L 18 10 C 18 7.2048001 16.086816 4.862095 13.5 4.1953125 L 13.5 3.5 C 13.5 2.672 12.828 2 12 2 z M 12 6 C 14.206 6 16 7.794 16 10 L 16 16 L 16 16.828125 L 16.171875 17 L 7.828125 17 L 8 16.828125 L 8 16 L 8 10 C 8 7.794 9.794 6 12 6 z">
-            </path>
-          </svg>
+  
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo" aria-label="SENAI - Página inicial">
+          <div class="logo-icon">
+            <span>SENAI</span>
+          </div>
+          <div class="logo-text">
+            <strong>SENAI</strong>
+            <span>Educação Profissional</span>
+          </div>
         </a>
-        <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-fill"
-            viewBox="0 0 16 16">
-            <path
-              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
-          </svg>
-        </a>
-        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-            class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-            <path fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-          </svg></a>
-
+        
+        <nav class="nav" id="nav" aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="#inicio" class="nav-link active">Início</a></li>
+            <li><a href="#cursos" class="nav-link">Cursos</a></li>
+            <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+            <li><a href="#galeria" class="nav-link">Galeria</a></li>
+            <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="#inscrever" class="btn btn-primary">
+            <span>Inscreva-se</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
-      <!--local que junta todos svgs-->
     </div>
-    <!--container que junta todos elementos da header-->
   </header>
 
-  <!-- NAV -->
-  <nav>
-    <!--local que junta todos drops-->
-    <div class="juncao-drop">
-      <div class="dropdown">
-        <button class="dropbtn"><b>Inicio</b></button>
-        <div class="dropdown-container">
-          <a href="#">Início</a>
-          <a href="#">Serviços</a>
-          <a href="#">Sobre</a>
-          <a href="#">Contato</a>
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text" data-aos="fade-right">
+          <span class="hero-badge">
+            <i class="fas fa-award"></i>
+            Referência em Educação Profissional
+          </span>
+          <h1 class="hero-title">
+            Transforme seu futuro com <span class="gradient-text">educação técnica</span> de qualidade
+          </h1>
+          <p class="hero-description">
+            Aprenda com infraestrutura de ponta, instrutores experientes do mercado e metodologia prática. 
+            Mais de 70 anos formando profissionais qualificados para a indústria brasileira.
+          </p>
+          <div class="hero-cta">
+            <a href="#cursos" class="btn btn-primary btn-lg">
+              <span>Explorar Cursos</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contato" class="btn btn-outline btn-lg">
+              <i class="fas fa-phone"></i>
+              <span>Fale Conosco</span>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="2500000">0</span>
+              <span class="stat-label">Alunos Formados</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="1800">0</span>
+              <span class="stat-label">Cursos Disponíveis</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="85">0</span>
+              <span class="stat-label">% Empregabilidade</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn"><b>Cursos</b></button>
-        <div class="dropdown-container">
-          <a href="#">Início</a>
-          <a href="#">Serviços</a>
-          <a href="#">Sobre</a>
-          <a href="#">Contato</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn"><b>Servicos</b></button>
-        <div class="dropdown-container">
-          <a href="#">Início</a>
-          <a href="#">Serviços</a>
-          <a href="#">Sobre</a>
-          <a href="#">Contato</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn"><b>contatos</b></button>
-        <div class="dropdown-container">
-          <a href="#">Instagram</a>
-          <a href="#">WhatsApp</a>
-          <a href="#">Gmail</a>
-          <a href="#">Celular</a>
+        <div class="hero-image" data-aos="fade-left">
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" alt="Estudantes em laboratório técnico">
+            <div class="hero-image-card card-1">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <strong>Certificação Reconhecida</strong>
+                <span>Válida em todo Brasil</span>
+              </div>
+            </div>
+            <div class="hero-image-card card-2">
+              <i class="fas fa-briefcase"></i>
+              <div>
+                <strong>Conexão com Empresas</strong>
+                <span>Oportunidades reais</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </nav>
+    <div class="hero-scroll">
+      <span>Role para descobrir</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
 
-  <!-- MAIN -->
-  <main>
-    <div class="content">
-      <img src="/site-empresa/assets/banner.png" alt="">
-      <div class="text-content">
-        <h2>Bem-vindo ao <b>Senai!</b></h2>
-        <p>O Serviço Nacional de Aprendizagem Industrial (SENAI) é uma das principais instituições de educação
-          profissional e tecnológica do Brasil. Com décadas de atuação, o SENAI oferece cursos de qualidade voltados
-          para a formação de profissionais preparados para os desafios do mercado de trabalho, especialmente no setor
-          industrial.
-
-          Seus cursos abrangem diversas áreas, como Mecânica, Elétrica, Tecnologia da Informação, Construção Civil,
-          Logística, Alimentos, entre outras. Com foco na prática e na inovação, o SENAI forma mão de obra qualificada
-          que impulsiona o desenvolvimento da indústria e da economia do país.
-
-          Seja para quem está começando uma carreira, buscando se atualizar ou se especializar, o SENAI é o caminho
-          certo para transformar conhecimento em oportunidades reais de crescimento profissional.</p>
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="stat-value" data-count="500">0</h3>
+          <p class="stat-text">Unidades no Brasil</p>
+        </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3 class="stat-value" data-count="15000">0</h3>
+          <p class="stat-text">Empresas Parceiras</p>
+        </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 class="stat-value" data-count="12000">0</h3>
+          <p class="stat-text">Instrutores Qualificados</p>
+        </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3 class="stat-value" data-count="98">0</h3>
+          <p class="stat-text">% Satisfação</p>
+        </div>
       </div>
     </div>
-    <section class="secao-aprendizado">
-      <h2>Meus Cursos</h2>
-      <div class="juncao-cards">
-        <div class="card-geral">
-          <img src="/site-empresa/assets/construçãocivil.png" alt="">
-          <span>
-            Construção civil
-          </span>
-          <p>
-            Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho. </p>
-        </div>
-        <div class="card-geral">
-          <img src="/site-empresa/assets/ti.png" alt="">
-          <span>
-            T.I
-          </span>
-          <p>Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho. </p>
-        </div>
-        <div class="card-geral">
-          <img src="/site-empresa/assets/edificaçãopredial.png" alt="">
-          <span>
-            Edificação predial
-          </span>
-          <p>Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho.</p>
-        </div>
-        <div class="card-geral">
-          <img src="/site-empresa/assets/mecanica.png" alt="">
-          <span>
-            Mecanica
-          </span>
-          <p>Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho. </p>
-        </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="courses-section" id="cursos">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Nossos Cursos</span>
+        <h2 class="section-title">Escolha sua <span class="gradient-text">área de atuação</span></h2>
+        <p class="section-description">
+          Oferecemos cursos técnicos em diversas áreas da indústria, com metodologia prática e foco no mercado de trabalho.
+        </p>
       </div>
-      <div class="juncao-cards">
-        <div class="card-geral">
-          <img src="/site-empresa/assets/metalmecanica.png" alt="">
-          <span>
-            Metal Mecanica
-          </span>
-          <p>Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho. </p>
-        </div>
-        <div class="card-geral">
-          <img src="/site-empresa/assets/panificação.jpg" alt="">
-          <span>
-            Panificação
-          </span>
-          <p>Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho. </p>
-        </div>
-        <div class="card-geral">
-          <img src="/site-empresa/assets/segurançadotrabalho.png" alt="">
-          <span>
-            Segurança do trabalho
-          </span>
-          <p>Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho.</p>
-        </div>
-        <div class="card-geral">
-          <img src="/site-empresa/assets/administração.png" alt="">
-          <span>
-            Administração
-          </span>
-          <p>Cursos de formação técnica que ensinam na prática uma profissão,
-            preparando você com excelência para o mercado de trabalho. </p>
-        </div>
+
+      <div class="courses-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-th"></i>
+          Todos os Cursos
+        </button>
+        <button class="filter-btn" data-filter="tecnologia">
+          <i class="fas fa-laptop-code"></i>
+          Tecnologia
+        </button>
+        <button class="filter-btn" data-filter="industrial">
+          <i class="fas fa-cogs"></i>
+          Industrial
+        </button>
+        <button class="filter-btn" data-filter="construcao">
+          <i class="fas fa-hard-hat"></i>
+          Construção
+        </button>
+        <button class="filter-btn" data-filter="automotiva">
+          <i class="fas fa-car"></i>
+          Automotiva
+        </button>
       </div>
-    </section>
-    <section class="juncao-galeria" >
-      <div class="title-galeria">
-      <h3>Galeria de Imagens</h3>
+
+      <div class="courses-grid">
+        <!-- Course Card 1 -->
+        <article class="course-card" data-category="tecnologia" data-aos="fade-up">
+          <div class="course-image">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Desenvolvimento de Sistemas">
+            <div class="course-badge">Popular</div>
+          </div>
+          <div class="course-content">
+            <div class="course-meta">
+              <span class="course-category">
+                <i class="fas fa-laptop-code"></i>
+                Tecnologia
+              </span>
+              <span class="course-duration">
+                <i class="far fa-clock"></i>
+                1200h
+              </span>
+            </div>
+            <h3 class="course-title">Desenvolvimento de Sistemas</h3>
+            <p class="course-description">
+              Aprenda programação, banco de dados, desenvolvimento web e mobile com as tecnologias mais demandadas pelo mercado.
+            </p>
+            <div class="course-info">
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9</span>
+              </div>
+              <span class="course-students">
+                <i class="fas fa-user-graduate"></i>
+                2.340 alunos
+              </span>
+            </div>
+            <button class="btn btn-secondary btn-block course-btn" onclick="openCourseModal('Desenvolvimento de Sistemas')">
+              <span>Ver Detalhes</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Course Card 2 -->
+        <article class="course-card" data-category="industrial" data-aos="fade-up" data-aos-delay="100">
+          <div class="course-image">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop" alt="Mecânica Industrial">
+            <div class="course-badge badge-new">Novo</div>
+          </div>
+          <div class="course-content">
+            <div class="course-meta">
+              <span class="course-category">
+                <i class="fas fa-cogs"></i>
+                Industrial
+              </span>
+              <span class="course-duration">
+                <i class="far fa-clock"></i>
+                1000h
+              </span>
+            </div>
+            <h3 class="course-title">Mecânica Industrial</h3>
+            <p class="course-description">
+              Formação completa em manutenção mecânica, processos industriais, leitura de desenho técnico e operação de máquinas.
+            </p>
+            <div class="course-info">
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.8</span>
+              </div>
+              <span class="course-students">
+                <i class="fas fa-user-graduate"></i>
+                1.890 alunos
+              </span>
+            </div>
+            <button class="btn btn-secondary btn-block course-btn" onclick="openCourseModal('Mecânica Industrial')">
+              <span>Ver Detalhes</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Course Card 3 -->
+        <article class="course-card" data-category="construcao" data-aos="fade-up" data-aos-delay="200">
+          <div class="course-image">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop" alt="Edificações">
+          </div>
+          <div class="course-content">
+            <div class="course-meta">
+              <span class="course-category">
+                <i class="fas fa-hard-hat"></i>
+                Construção
+              </span>
+              <span class="course-duration">
+                <i class="far fa-clock"></i>
+                1200h
+              </span>
+            </div>
+            <h3 class="course-title">Edificações</h3>
+            <p class="course-description">
+              Projetos estruturais, gerenciamento de obras, orçamento, AutoCAD e normas técnicas da construção civil.
+            </p>
+            <div class="course-info">
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9</span>
+              </div>
+              <span class="course-students">
+                <i class="fas fa-user-graduate"></i>
+                1.560 alunos
+              </span>
+            </div>
+            <button class="btn btn-secondary btn-block course-btn" onclick="openCourseModal('Edificações')">
+              <span>Ver Detalhes</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Course Card 4 -->
+        <article class="course-card" data-category="tecnologia" data-aos="fade-up">
+          <div class="course-image">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Redes de Computadores">
+          </div>
+          <div class="course-content">
+            <div class="course-meta">
+              <span class="course-category">
+                <i class="fas fa-laptop-code"></i>
+                Tecnologia
+              </span>
+              <span class="course-duration">
+                <i class="far fa-clock"></i>
+                1000h
+              </span>
+            </div>
+            <h3 class="course-title">Redes de Computadores</h3>
+            <p class="course-description">
+              Configuração, administração e segurança de redes. Certificações Cisco e preparação para o mercado de TI.
+            </p>
+            <div class="course-info">
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.7</span>
+              </div>
+              <span class="course-students">
+                <i class="fas fa-user-graduate"></i>
+                1.120 alunos
+              </span>
+            </div>
+            <button class="btn btn-secondary btn-block course-btn" onclick="openCourseModal('Redes de Computadores')">
+              <span>Ver Detalhes</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Course Card 5 -->
+        <article class="course-card" data-category="automotiva" data-aos="fade-up" data-aos-delay="100">
+          <div class="course-image">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&h=400&fit=crop" alt="Mecânica Automotiva">
+            <div class="course-badge">Popular</div>
+          </div>
+          <div class="course-content">
+            <div class="course-meta">
+              <span class="course-category">
+                <i class="fas fa-car"></i>
+                Automotiva
+              </span>
+              <span class="course-duration">
+                <i class="far fa-clock"></i>
+                1100h
+              </span>
+            </div>
+            <h3 class="course-title">Mecânica Automotiva</h3>
+            <p class="course-description">
+              Manutenção preventiva e corretiva, diagnóstico eletrônico, injeção eletrônica e sistemas automotivos modernos.
+            </p>
+            <div class="course-info">
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9</span>
+              </div>
+              <span class="course-students">
+                <i class="fas fa-user-graduate"></i>
+                2.010 alunos
+              </span>
+            </div>
+            <button class="btn btn-secondary btn-block course-btn" onclick="openCourseModal('Mecânica Automotiva')">
+              <span>Ver Detalhes</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Course Card 6 -->
+        <article class="course-card" data-category="industrial" data-aos="fade-up" data-aos-delay="200">
+          <div class="course-image">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop" alt="Eletrotécnica">
+          </div>
+          <div class="course-content">
+            <div class="course-meta">
+              <span class="course-category">
+                <i class="fas fa-cogs"></i>
+                Industrial
+              </span>
+              <span class="course-duration">
+                <i class="far fa-clock"></i>
+                1200h
+              </span>
+            </div>
+            <h3 class="course-title">Eletrotécnica</h3>
+            <p class="course-description">
+              Instalações elétricas industriais, comandos elétricos, automação, NR-10 e projetos elétricos prediais.
+            </p>
+            <div class="course-info">
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.8</span>
+              </div>
+              <span class="course-students">
+                <i class="fas fa-user-graduate"></i>
+                1.670 alunos
+              </span>
+            </div>
+            <button class="btn btn-secondary btn-block course-btn" onclick="openCourseModal('Eletrotécnica')">
+              <span>Ver Detalhes</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div class="courses-cta" data-aos="fade-up">
+        <p>Não encontrou o curso ideal?</p>
+        <a href="#contato" class="btn btn-outline">
+          <i class="fas fa-search"></i>
+          <span>Ver Todos os Cursos</span>
+        </a>
+      </div>
     </div>
-    <section class="galeria">
-      <img src="https://picsum.photos/seed/picsum/200/300" alt="">
-      <img src="https://picsum.photos/200/300?grayscale" alt="">
-      <img src="https://picsum.photos/id/237/200/300" alt="">
-      <img src="https://picsum.photos/200/300" alt="">
-      <img src="https://picsum.photos/200/300" alt="">
-      <img src="https://picsum.photos/200/300" alt="">
-      <img src="https://picsum.photos/200" alt="">
-      <img src="https://picsum.photos/seed/picsum/200/300" alt="">
-      <img src="https://picsum.photos/seed/picsum/200/300" alt="">
-      <img src="https://picsum.photos/seed/picsum/200/300" alt="">
-    </section>
-    </section>
-  </main>
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Minha Empresa. Todos os direitos reservados.</p>
+  </section>
+
+  <!-- Differentials Section -->
+  <section class="differentials-section" id="diferenciais">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Por que escolher o SENAI?</span>
+        <h2 class="section-title">Diferenciais que fazem a <span class="gradient-text">diferença</span></h2>
+      </div>
+
+      <div class="differentials-grid">
+        <div class="differential-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="differential-icon">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h3 class="differential-title">Infraestrutura de Ponta</h3>
+          <p class="differential-description">
+            Laboratórios equipados com tecnologia industrial real, proporcionando experiência prática desde o primeiro dia.
+          </p>
+        </div>
+
+        <div class="differential-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="differential-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="differential-title">Instrutores Especialistas</h3>
+          <p class="differential-description">
+            Profissionais com vasta experiência no mercado, trazendo casos reais e conhecimento atualizado.
+          </p>
+        </div>
+
+        <div class="differential-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="differential-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="differential-title">Conexão com Empresas</h3>
+          <p class="differential-description">
+            Parcerias com mais de 15 mil empresas garantem oportunidades de estágio e emprego para nossos alunos.
+          </p>
+        </div>
+
+        <div class="differential-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="differential-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3 class="differential-title">Certificação Reconhecida</h3>
+          <p class="differential-description">
+            Diploma válido em todo território nacional, reconhecido pelo MEC e valorizado pelas indústrias.
+          </p>
+        </div>
+
+        <div class="differential-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="differential-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3 class="differential-title">Metodologia Híbrida</h3>
+          <p class="differential-description">
+            Combine aulas presenciais e online com nossa plataforma EAD moderna e intuitiva.
+          </p>
+        </div>
+
+        <div class="differential-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="differential-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="differential-title">Alta Empregabilidade</h3>
+          <p class="differential-description">
+            85% dos nossos alunos conseguem emprego em até 6 meses após a conclusão do curso.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="galeria">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Nossa Estrutura</span>
+        <h2 class="section-title">Conheça nossos <span class="gradient-text">espaços</span></h2>
+        <p class="section-description">
+          Ambientes modernos e equipados para proporcionar a melhor experiência de aprendizado.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-large" data-aos="zoom-in">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" alt="Laboratório de Tecnologia">
+          <div class="gallery-overlay">
+            <h3>Laboratório de Tecnologia</h3>
+            <p>Equipamentos de última geração</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop" alt="Oficina Mecânica">
+          <div class="gallery-overlay">
+            <h3>Oficina Mecânica</h3>
+            <p>Prática profissional</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=300&fit=crop" alt="Sala de Projetos">
+          <div class="gallery-overlay">
+            <h3>Sala de Projetos</h3>
+            <p>Desenvolvimento colaborativo</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop" alt="Laboratório de Informática">
+          <div class="gallery-overlay">
+            <h3>Lab. Informática</h3>
+            <p>Tecnologia avançada</p>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=400&fit=crop" alt="Oficina Automotiva">
+          <div class="gallery-overlay">
+            <h3>Oficina Automotiva</h3>
+            <p>Veículos reais para aprendizado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="depoimentos">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Depoimentos</span>
+        <h2 class="section-title">Histórias de <span class="gradient-text">sucesso</span></h2>
+        <p class="section-description">
+          Veja o que nossos alunos têm a dizer sobre sua experiência no SENAI.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel" id="testimonialsCarousel">
+        <div class="testimonial-card" data-aos="fade-up">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "O curso de Desenvolvimento de Sistemas do SENAI mudou minha vida. Consegui meu primeiro emprego como programador antes mesmo de concluir o curso. Os instrutores são excelentes e a estrutura é incrível!"
+          </p>
+          <div class="testimonial-author">
+            <img src="https://i.pravatar.cc/150?img=33" alt="Carlos Silva">
+            <div>
+              <strong>Carlos Silva</strong>
+              <span>Desenvolvedor Full Stack</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Fiz o curso de Mecânica Industrial e hoje trabalho em uma das maiores montadoras do país. O SENAI me deu toda a base técnica e prática que eu precisava. Recomendo muito!"
+          </p>
+          <div class="testimonial-author">
+            <img src="https://i.pravatar.cc/150?img=27" alt="Ana Paula">
+            <div>
+              <strong>Ana Paula Santos</strong>
+              <span>Técnica em Mecânica Industrial</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "A qualidade do ensino no SENAI é incomparável. Os laboratórios são modernos e os professores realmente se importam com o aprendizado dos alunos. Estou muito satisfeito com minha escolha!"
+          </p>
+          <div class="testimonial-author">
+            <img src="https://i.pravatar.cc/150?img=12" alt="Roberto Lima">
+            <div>
+              <strong>Roberto Lima</strong>
+              <span>Técnico em Eletrotécnica</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Depoimento anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Próximo depoimento">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Perguntas Frequentes</span>
+        <h2 class="section-title">Tire suas <span class="gradient-text">dúvidas</span></h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item" data-aos="fade-up">
+          <button class="faq-question">
+            <span>Como faço para me inscrever em um curso?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Para se inscrever, você pode acessar nosso site, escolher o curso desejado e preencher o formulário de inscrição online. Também é possível comparecer presencialmente em uma de nossas unidades. Nossa equipe estará pronta para auxiliá-lo em todo o processo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <button class="faq-question">
+            <span>Qual é a duração média dos cursos técnicos?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Os cursos técnicos têm duração média de 1 a 2 anos, dependendo da área escolhida. Oferecemos também cursos de qualificação profissional com duração mais curta, que variam de 160 a 400 horas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <button class="faq-question">
+            <span>O certificado do SENAI é reconhecido?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! O certificado do SENAI é reconhecido pelo MEC (Ministério da Educação) e tem validade em todo o território nacional. Além disso, é altamente valorizado pelas indústrias e empresas de diversos setores.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up">
+          <button class="faq-question">
+            <span>Existe algum programa de bolsas ou descontos?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim, o SENAI oferece diversos programas de gratuidade e bolsas de estudo através do Programa SENAI de Gratuidade (PSG). Consulte nossa equipe para verificar sua elegibilidade e conhecer as opções disponíveis.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <button class="faq-question">
+            <span>Há oportunidades de estágio durante o curso?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! Temos parcerias com mais de 15 mil empresas que oferecem oportunidades de estágio para nossos alunos. Nossa equipe de relacionamento com empresas trabalha ativamente para conectar estudantes com o mercado de trabalho.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <button class="faq-question">
+            <span>Posso fazer o curso online?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Oferecemos cursos nas modalidades presencial, semipresencial e EAD. A disponibilidade varia de acordo com o curso escolhido. Alguns cursos técnicos exigem atividades práticas presenciais, mas combinam com aulas teóricas online.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contato">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info" data-aos="fade-right">
+          <span class="section-badge">Entre em Contato</span>
+          <h2 class="section-title">Vamos conversar sobre seu <span class="gradient-text">futuro</span></h2>
+          <p class="section-description">
+            Preencha o formulário ao lado ou entre em contato através de nossos canais. Nossa equipe está pronta para ajudá-lo a escolher o melhor caminho profissional.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <strong>Telefone</strong>
+                <p>0800 123 4567</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <strong>E-mail</strong>
+                <p>contato@senai.br</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <strong>Endereço</strong>
+                <p>Av. Paulista, 1313 - São Paulo, SP</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <strong>Horário de Atendimento</strong>
+                <p>Segunda a Sexta: 8h às 18h</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-aos="fade-left">
+          <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="course">Curso de Interesse</label>
+            <select id="course" name="course" required>
+              <option value="">Selecione um curso</option>
+              <option value="desenvolvimento">Desenvolvimento de Sistemas</option>
+              <option value="mecanica">Mecânica Industrial</option>
+              <option value="edificacoes">Edificações</option>
+              <option value="redes">Redes de Computadores</option>
+              <option value="automotiva">Mecânica Automotiva</option>
+              <option value="eletrotecnica">Eletrotécnica</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">
+            <span>Enviar Mensagem</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <span>SENAI</span>
+            </div>
+            <div class="logo-text">
+              <strong>SENAI</strong>
+              <span>Educação Profissional</span>
+            </div>
+          </div>
+          <p class="footer-description">
+            Formando profissionais qualificados para a indústria brasileira há mais de 70 anos.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Cursos</h4>
+          <ul>
+            <li><a href="#cursos">Tecnologia</a></li>
+            <li><a href="#cursos">Industrial</a></li>
+            <li><a href="#cursos">Construção</a></li>
+            <li><a href="#cursos">Automotiva</a></li>
+            <li><a href="#cursos">Ver Todos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#diferenciais">Sobre o SENAI</a></li>
+            <li><a href="#galeria">Nossa Estrutura</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Notícias</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#contato">Fale Conosco</a></li>
+            <li><a href="#">Central de Ajuda</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 SENAI - Serviço Nacional de Aprendizagem Industrial. Todos os direitos reservados.</p>
+      </div>
+    </div>
   </footer>
-  <!-- WHATSAPP ICON -->
-  <div id="whatsapp">
-    <a href="https://wa.me/5500000000000" target="_blank" aria-label="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
+
+  <!-- Course Modal -->
+  <div class="modal" id="courseModal">
+    <div class="modal-overlay" onclick="closeCourseModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCourseModal()" aria-label="Fechar modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body">
+        <h2 id="modalTitle">Título do Curso</h2>
+        <div class="modal-info">
+          <span><i class="fas fa-clock"></i> 1200 horas</span>
+          <span><i class="fas fa-calendar"></i> 18 meses</span>
+          <span><i class="fas fa-certificate"></i> Certificado MEC</span>
+        </div>
+        <p id="modalDescription">Descrição detalhada do curso...</p>
+        <h3>O que você vai aprender:</h3>
+        <ul id="modalTopics">
+          <li>Tópico 1</li>
+          <li>Tópico 2</li>
+          <li>Tópico 3</li>
+        </ul>
+        <div class="modal-actions">
+          <a href="#inscrever" class="btn btn-primary btn-lg" onclick="closeCourseModal()">
+            <span>Inscrever-se Agora</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contato" class="btn btn-outline btn-lg" onclick="closeCourseModal()">
+            <span>Falar com Orientador</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
   <script src="home.js"></script>
 </body>
 </html>
