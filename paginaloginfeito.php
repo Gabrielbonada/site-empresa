@@ -1,25 +1,58 @@
+<?php
+session_start();
+$con = new mysqli("localhost", "root", "", "sistemasenai");
+
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+
+$stmt = $con->prepare("SELECT nome, senha FROM cadastros WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+  $user = $result->fetch_assoc();
+
+  // Se a senha não é hash, você usa: if ($senha == $user['senha']) { ... }
+  if ($senha == $user['senha']) {
+    $_SESSION['nome'] = $user['nome'];
+    header("Location: index.php");
+  } else {
+    echo "Senha incorreta";
+  }
+} else {
+  echo "E-mail não encontrado";
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SENAI - Serviço Nacional de Aprendizagem Industrial. Cursos técnicos e formação profissional com alta empregabilidade.">
   <meta name="keywords" content="SENAI, educação profissional, cursos técnicos, formação industrial">
   <title>SENAI — Educação Profissional de Excelência</title>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  
+
   <!-- Header -->
   <header class="header" id="header">
     <div class="container">
@@ -33,7 +66,7 @@
             <span>Educação Profissional</span>
           </div>
         </a>
-        
+
         <nav class="nav" id="nav" aria-label="Navegação principal">
           <ul class="nav-list">
             <li><a href="#inicio" class="nav-link active">Início</a></li>
@@ -44,19 +77,12 @@
             <li><a href="#contato" class="nav-link">Contato</a></li>
           </ul>
         </nav>
-        
+
         <div class="header-actions">
           <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
             <i class="fas fa-moon"></i>
           </button>
-          <a href="inscrever.php" class="btn btn-primary">
-            <span>Inscreva-se</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="login.php" class="btn btn-primary">
-            <span>Login</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+          <span class="btn btn-primary">bem vindo, <?php echo $_SESSION['nome']; ?></span>
           <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
             <span></span>
             <span></span>
@@ -81,7 +107,7 @@
             Transforme seu futuro com <span class="gradient-text">educação técnica</span> de qualidade
           </h1>
           <p class="hero-description">
-            Aprenda com infraestrutura de ponta, instrutores experientes do mercado e metodologia prática. 
+            Aprenda com infraestrutura de ponta, instrutores experientes do mercado e metodologia prática.
             Mais de 70 anos formando profissionais qualificados para a indústria brasileira.
           </p>
           <div class="hero-cta">
@@ -969,4 +995,5 @@
   <!-- Scripts -->
   <script src="home.js"></script>
 </body>
+
 </html>
